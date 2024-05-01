@@ -31,13 +31,15 @@ jobs:
     - name: Run Python scripts
       run: |
         python3 pyCGVChart.py
-        python3 pyMegaboxChart.py
+        python3 pyMoviechartChart.py
+        python3 pyMegabox.py
     - name: Commits
       run : |
-        git config --global user.email "wlsakf23@gmail.com"
-        git config --global user.name "kimyih"
+        git config --global user.email "sdw10195@gmail.com"
+        git config --global user.name "seodaewon1"
         git add CGV/CGVChart_*.json
-        git add Megabox/MegaboxChart_*.json
+        git add Moviechart/MoviechartChart_*.json
+        git add Megabox/MegaboxChart*.json
         git commit -m "차트 수집 완료"
     - name: Push
       uses: ad-m/github-push-action@master
