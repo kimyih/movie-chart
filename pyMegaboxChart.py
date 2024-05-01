@@ -14,6 +14,7 @@ current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"Megabox/MegaboxChart_{current_date}.json"
 # 웹드라이브 설치
 options = ChromeOptions()
+options.add_argument("--headless")
 service = ChromeService(executable_path=ChromeDriverManager().install())
 browser = webdriver.Chrome(service=service, options=options)
 browser.get('https://www.megabox.co.kr/movie')
