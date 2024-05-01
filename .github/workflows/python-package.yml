@@ -31,6 +31,7 @@ jobs:
     - name: Run Python scripts
       run: |
         python3 pyCGVChart.py
+        python3 pyMegaboxChart.py
     - name: Commits
       run : |
         git config --global user.email "wlsakf23@gmail.com"
