@@ -1,4 +1,4 @@
-name: Python package
+              name: Python package
 
 on:
   push:
@@ -37,12 +37,14 @@ jobs:
     - name: Run Python scripts
       run: |
         python3 pyCGVChart.py
+        python3 pyMoviechartChart.py
 
     - name: Commits
       run : |
         git config --global user.email "wlsakf23@gmail.com"
         git config --global user.name "kimyih" 
         git add CGV/CGVChart_*.json
+        git add Moviechart/MoviechartChart_*.json
         git commit -m "차트 수집 완료"
 
     - name: Push
