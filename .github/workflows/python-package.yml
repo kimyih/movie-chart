@@ -30,20 +30,12 @@ jobs:
         pip install webdriver_manager
     - name: Run Python scripts
       run: |
-        python3 pyCGVChart.py
         python3 pyMegabox.py
-        python3 pyLottecinema.py
-        python3 pyCineQ.py
-        python3 pyMoviechartChart.py
     - name: Commits
       run : |
         git config --global user.email "wlsakf23@gmail.com"
         git config --global user.name "kimyih"
-        git add CGV/CGVChart_*.json
         git add Megabox/MegaboxChart*.json
-        git add Lottecinema/LottecinemaChart*.json
-        git add CineQ/CineQChart*.json
-        git add Moviechart/MoviechartChart_*.json
         git commit -m "차트 수집 완료"
     - name: Push
       uses: ad-m/github-push-action@master
