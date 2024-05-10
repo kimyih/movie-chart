@@ -1,4 +1,4 @@
-import requests
+import requests as req 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -8,7 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 from datetime import datetime
-from user_agent import generate_user_agent, generate_navigator
 import time
 import json
 
@@ -17,11 +16,6 @@ headers = {
 }
 
 response = requests.get('https://www.megabox.co.kr/movie', headers=headers)
-
-
-print(generate_user_agent(device_type='desktop'))
-print(generate_user_agent(os='win', device_type='desktop'))
-print(generate_user_agent(os=('mac', 'linux'), device_type='desktop'))
 
 navigator = generate_navigator()
 print(navigator)
