@@ -7,8 +7,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 from datetime import datetime
+from user_agent import generate_user_agent, generate_navigator
 import time
 import json
+
+print(generate_user_agent(device_type='desktop'))
+print(generate_user_agent(os='win', device_type='desktop'))
+print(generate_user_agent(os=('mac', 'linux'), device_type='desktop'))
+
+navigator = generate_navigator()
+print(navigator)
+print(navigator['platform'])
+
 # 현재 날짜 가져오기
 current_date = datetime.now().strftime("%Y-%m-%d")
 filename = f"Megabox/MegaboxChart_{current_date}.json"
