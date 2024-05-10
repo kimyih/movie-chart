@@ -1,3 +1,4 @@
+import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
@@ -10,6 +11,13 @@ from datetime import datetime
 from user_agent import generate_user_agent, generate_navigator
 import time
 import json
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+}
+
+response = requests.get('https://www.megabox.co.kr/movie', headers=headers)
+
 
 print(generate_user_agent(device_type='desktop'))
 print(generate_user_agent(os='win', device_type='desktop'))
